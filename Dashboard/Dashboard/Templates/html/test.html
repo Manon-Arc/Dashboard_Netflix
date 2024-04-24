@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- Dans test.html de votre dossier templates -->
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/globals.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global dashboard</title>
+</head>
+<div class="navbar" >
+    <div class="navbar-inner">
+        <img class="logo" src="static/img/logo.png">
+        <a class="global" aria-label="Global" title="Global" href="/">
+            Global
+        </a>
+        <a class="movies" aria-label="Movies" title="Movies" href="/movies/">
+            Movies
+        </a>
+        <a class="TV shows" aria-label="TV shows" title="TV shows" href="/TV_shows/">
+            TV shows
+        </a>
+    </div>
+</div>
+<body>
+<!--    <div class="sort">-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--        <input type="hidden" name="filter" value="director">-->
+<!--        <button type="submit">Search by Director</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="show_id">-->
+<!--            <button type="submit">Search by Show Id</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="type">-->
+<!--            <button type="submit">Search by type</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="title">-->
+<!--            <button type="submit">Search by Title</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="cast">-->
+<!--            <button type="submit">Search by Cast</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="country">-->
+<!--            <button type="submit">Search by Country</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="date_added">-->
+<!--            <button type="submit">Search by Date Added</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="release_year">-->
+<!--            <button type="submit">Search by Release Year</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="rating">-->
+<!--            <button type="submit">Search by Rating</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="duration">-->
+<!--            <button type="submit">Search by Duration</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="listed_in">-->
+<!--            <button type="submit">Search by Listed in</button>-->
+<!--        </form>-->
+<!--        <form method="post"> {% csrf_token %}-->
+<!--            <input type="hidden" name="filter" value="description">-->
+<!--            <button type="submit">Search by Description</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+    <div class="dash">
+        <div class="chart">
+            {{ pie_chart_sorted_html|safe }}
+        </div>
+
+        <div class="heatMap">
+            {{ heatmap_html|safe }}
+        </div>
+
+        <div class="heatMap">
+            {{ duration_map|safe }}
+        </div>
+
+        <div class="bar_chart">
+            {{ bar_chart_html|safe }}
+        </div>
+    </div>
+
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>ID</th>-->
+<!--            <th>Type</th>-->
+<!--            <th>Title</th>-->
+<!--            <th>Director</th>-->
+<!--            <th>Cast</th>-->
+<!--            <th>Country</th>-->
+<!--            <th>Date Added</th>-->
+<!--            <th>Release Year</th>-->
+<!--            <th>Rating</th>-->
+<!--            <th>Duration</th>-->
+<!--            <th>Listed In</th>-->
+<!--            <th>Description</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        {% for row in sorted_data %}-->
+<!--        <tr>-->
+<!--            <td>{{ row.show_id }}</td>-->
+<!--            <td>{{ row.type }}</td>-->
+<!--            <td>{{ row.title }}</td>-->
+<!--            <td>{{ row.director }}</td>-->
+<!--            <td>{{ row.cast }}</td>-->
+<!--            <td>{{ row.country }}</td>-->
+<!--            <td>{{ row.date_added }}</td>-->
+<!--            <td>{{ row.release_year }}</td>-->
+<!--            <td>{{ row.rating }}</td>-->
+<!--            <td>{{ row.duration }}</td>-->
+<!--            <td>{{ row.listed_in }}</td>-->
+<!--            <td>{{ row.description }}</td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+
+<!--<h1>Données CSV</h1>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        {% for header in headers %}-->
+<!--        <th>{{ header }}</th>-->
+<!--        {% endfor %}-->
+<!--    </tr>-->
+<!--    {% for row in data %}-->
+<!--    <tr>-->
+<!--        {% for header in headers %}-->
+<!--        <td>{{ row|default_if_none:""|default:header }}</td>-->
+<!--        {% endfor %}-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
+</body>
+</html>

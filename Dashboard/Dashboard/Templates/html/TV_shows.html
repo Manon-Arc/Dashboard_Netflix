@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/globals.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet", href="../static/css/movie_serie.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV shows</title>
+</head>
+<div class="navbar" >
+    <div class="navbar-inner">
+        <img class="logo" src="../static/img/logo.png">
+        <a class="global" aria-label="Global" title="Global" href="/">
+            Global
+        </a>
+        <a class="movies" aria-label="Movies" title="Movies" href="/movies/">
+            Movies
+        </a>
+        <a class="TV shows" aria-label="TV shows" title="TV shows" href="/TV_shows/">
+            TV shows
+        </a>
+    </div>
+</div>
+<body>
+<div class="top">
+    <div class="left">
+        <div class="element_list">
+            <ul>
+                {% for title in result %}
+                    <li>{{ title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div>
+            <p>Filters</p>
+        </div>
+
+        <form method="get" id="filter_form">
+        {% csrf_token %}
+            <div class="filt">
+                <label for="date_add">Date added : </label>
+                    <select name="date_add" id="date_add" onchange="this.form.submit()">
+                        <option value="{% if selected_add_date %}{{ selected_add_date }}{% endif %}">{% if selected_add_date %}{{ selected_add_date }} {% else %} Select {% endif %}</option>
+                            {% for dal in date_add_list %}
+                        <option value=" {{ dal }}">{{ dal }}</option>
+                            {% endfor %}
+                    </select>
+            </div>
+
+             <div class="filt">
+                <label for="release_year">Release year : </label>
+                    <select name="release_year" id="release_year" onchange="this.form.submit()">
+                        <option value="{% if selected_release_year %}{{ selected_release_year }}{% endif %}">{% if selected_release_year %}{{ selected_release_year }} {% else %} Select {% endif %}</option>
+                            {% for ryl in release_year_list %}
+                        <option value=" {{ ryl }}">{{ ryl }}</option>
+                            {% endfor %}
+                    </select>
+             </div>
+
+             <div class="filt">
+                <label for="country">Country : </label>
+                    <select name="country" id="country" onchange="this.form.submit()">
+                        <option value="{% if selected_country %}{{ selected_country }}{% endif %}">{% if selected_country %}{{ selected_country }} {% else %} Select {% endif %}</option>
+                            {% for scl in country_list %}
+                        <option value=" {{ scl }}">{{ scl }}</option>
+                            {% endfor %}
+                    </select>
+             </div>
+
+             <div class="filt">
+                <label for="director">Director : </label>
+                    <select name="director" id="director" onchange="this.form.submit()">
+                        <option value="{% if selected_director %}{{ selected_director }}{% endif %}">{% if selected_director %}{{ selected_director }} {% else %} Select {% endif %}</option>
+                            {% for dl in director_list %}
+                        <option value=" {{ dl }}">{{ dl }}</option>
+                            {% endfor %}
+                    </select>
+             </div>
+
+             <div class="filt">
+                <label for="cast">Cast : </label>
+                    <select name="cast" id="cast" onchange="this.form.submit()">
+                        <option value="{% if selected_cast %}{{ selected_cast }}{% endif %}">{% if selected_cast %}{{ selected_cast }} {% else %} Select {% endif %}</option>
+                            {% for cl in cast_list %}
+                        <option value=" {{ cl }}">{{ cl }}</option>
+                            {% endfor %}
+                    </select>
+             </div>
+
+             <div class="filt">
+                <label for="category">Category : </label>
+                    <select name="category" id="category" onchange="this.form.submit()">
+                        <option value="{% if selected_category %}{{ selected_category }}{% endif %}">{% if selected_category %}{{ selected_category }} {% else %} Select {% endif %}</option>
+                            {% for cl in category_list %}
+                        <option value=" {{ cl }}">{{ cl }}</option>
+                            {% endfor %}
+                    </select>
+             </div>
+        </form>
+    </div>
+</div>
+    <div class="dash2">
+        <div class="bar1">
+        {{ bar_chart_html1|safe }}
+        </div>
+        <div class="bar2">
+            {{ bar_chart_html3|safe }}
+        </div>
+    </div>
+
+    <div class="dash">
+        <div>
+            {{ line_chart_html1|safe }}
+        </div>
+        <div>
+            {{ line_chart_duration_html1|safe }}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+:root {
+    --Primary: #E4101F;
+    --Secondary: #AD0C11;
+    --Background: #211C19;
+    --Fonts: #FAFAFA;
+}
+
+body {
+    font-family: "Source Sans Pro Semibold", "Source Sans Pro Light", serif;
+    color: var(--Fonts);
+    font-size: 20px;
+    background: var(--Background);
+    overflow-y: auto;
+    color: rgba(57,57,57,0.51);
+}
+
+a {
+    color: var(--Fonts);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--Primary);
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    padding: 1%;
+}
