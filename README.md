@@ -57,7 +57,7 @@ source venv/bin/activate
 ```
 ### 5. Install Required Packages
 ```bash
-pip install -r Requirements.txt
+pip install -r requirement.txt
 ```
 ## 💻 Starting the Project
 
