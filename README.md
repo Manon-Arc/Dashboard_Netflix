@@ -35,7 +35,7 @@ V. [Project Overview](#🌟-project-overview)
 - Setup Instructions
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Darkblue5031/projet_data
+git clone https://github.com/Darkblue5031/projet_data](https://github.com/Manon-Arc/Dashboard_Netflix)
 ```
 ### 2. Navigate to the Project Directory
 
