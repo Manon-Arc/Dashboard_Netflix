@@ -21,7 +21,7 @@ V. [Project Overview](#🌟-project-overview)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 [![Python logo](https://img.shields.io/badge/Language-Python-green
-)](https://www.php.net/)
+)](https://www.python.org)
 
 
 ## 📑 License
